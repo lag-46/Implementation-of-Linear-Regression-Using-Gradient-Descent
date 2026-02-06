@@ -9,15 +9,29 @@ To write a program to predict the profit of a city using the linear regression m
 
 ## Algorithm
 
-1.Load the dataset from a CSV file and separate the features and target variable, encoding any categorical variables as needed.
+1.Get the independent variables X and dependent variable Y from the dataset.
 
-2.Scale the features using a standard scaler to normalize the data.
+2.Standardize (Scale) the X and Y values using Standard Scaler.
 
-3.Initialize model parameters (theta) and add an intercept term to the feature set.
+3.Add bias term (column of 1s) to X.
 
-4.Train the linear regression model using gradient descent by iterating through a specified number of iterations to minimize the cost function.
+4.Initialize parameter values (theta) as zero.
 
-5.Make predictions on new data by transforming it using the same scaling and encoding applied to the training data.
+5.Predict Y values using: Ypred = X * theta.
+
+6.Calculate error using: Error = Ypred – Y.
+
+7.Update theta using Gradient Descent:
+theta = theta – learning_rate * (1/n) * Xᵀ * Error.
+
+8.Repeat prediction and theta update for given number of iterations.
+
+9.Obtain final theta (trained model parameters).
+
+10.Scale new input data and predict output using trained theta.
+
+11.Convert predicted scaled output back to original value using inverse scaling.
+
 
 ## Program:
 ```
